@@ -26,7 +26,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <form class="form-inline">
+                <form class="form-inline" id="form">
                     <div class="form-group" placeholder="e-mail" style="margin-top:46px;margin-left:10%;width:80%;"><input class="form-control login" type="text" placeholder="e-mail"></div>
                     <div class="form-group" placeholder="e-mail" style="margin-top:9px;margin-left:10%;width:80%;"><input class="form-control login" type="text" placeholder="contraseña"></div>
                     <div class="form-row" style="padding-top:24px;">
@@ -46,6 +46,13 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $("#form").onsubmit(function () {
+           $.ajax({
+               url:
+           })
+        });
+    </script>
 </body>
 
 </html>
