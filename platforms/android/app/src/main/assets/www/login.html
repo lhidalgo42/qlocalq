@@ -27,8 +27,8 @@
         <div class="row">
             <div class="col">
                 <form class="form-inline" id="form">
-                    <div class="form-group" placeholder="e-mail" style="margin-top:46px;margin-left:10%;width:80%;"><input class="form-control login" type="text" placeholder="e-mail"></div>
-                    <div class="form-group" placeholder="e-mail" style="margin-top:9px;margin-left:10%;width:80%;"><input class="form-control login" type="text" placeholder="contraseña"></div>
+                    <div class="form-group" style="margin-top:46px;margin-left:10%;width:80%;"><input class="form-control login" id="email" type="text" placeholder="e-mail"></div>
+                    <div class="form-group" style="margin-top:9px;margin-left:10%;width:80%;"><input class="form-control login" id="password" type="password" placeholder="contraseña"></div>
                     <div class="form-row" style="padding-top:24px;">
                         <div class="col" style="text-align:center;">
                             <p style="color:rgb(255,255,255);font-family:Quicksand, sans-serif;text-align:center;font-size:13px;">Acepta las Condiciones de uso, la politica de privacidad de glocalQ.</p>
@@ -49,7 +49,20 @@
     <script>
         $("#form").onsubmit(function () {
            $.ajax({
-               url:
+               url: "httpd://app.glocalq.com/api/login",
+               type:'POST',
+               data:{
+                   email:$("#email").val(),
+                   password:$("#password")
+               },
+               success:function (data) {
+                   if(data === 0){
+                       alert("Error en usuario o contrasena")
+                   }
+                   else{
+                       window.location.href = 'talentos.html'
+                   }
+               }
            })
         });
     </script>

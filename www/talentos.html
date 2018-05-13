@@ -28,7 +28,7 @@
         </ul>
     </section>
     <section id="bg" style="width:100%;height:210px;padding-top:40px;">
-        <div style="width:100%;"><img class="flex-shrink-1 flex-fill align-items-center align-content-center align-self-center mb-auto" src="assets/img/load.jpeg" style="width:100%;bottom:0;padding:0px;max-height:168px;"></div>
+        <div style="width:100%;"><img class="flex-shrink-1 flex-fill align-items-center align-content-center align-self-center mb-auto" src="" style="width:100%;bottom:0;padding:0px;max-height:168px;" id="bg-image"></div>
     </section>
     <section id="people" style="width:100%;background-color:#eeeeee;">
         <div class="container section-people">
@@ -86,7 +86,7 @@
     <section id="photo">
         <div class="center-block" style="width:55px;height:55px;position:absolute;margin-left:40%;background-color:#000000;border-radius:27.5px;-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);-moz-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);"><img class="rounded-circle" src="assets/img/sil-female.png" style="width:100%;height:100%;"></div>
         <div style="width:100%;height:75%;margin-top:12%;border-radius:10px;border:1px solid rgb(126,126,126);-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);-moz-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);text-align:center;background-color:#ffffff;">
-            <p style="font-family:Quicksand, sans-serif;color:rgb(44,44,44);padding-right:20px;padding-left:20px;padding-top:25px;">Compania de Cervecerias Unidas</p>
+            <p style="font-family:Quicksand, sans-serif;color:rgb(44,44,44);padding-right:20px;padding-left:20px;padding-top:25px;" id="company-name"></p>
         </div>
     </section>
     <section id="title" class="fixed-top">
@@ -94,6 +94,25 @@
     </section>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        var login = JSON.parse(window.localStorage.getItem("login"));
+        $.ajax({
+            url:"http://glocalq.com/api/company/"+login.company_id,
+            type:"GET",
+            success:function (data) {
+                console.log(data)
+                $("#bg-image").attr('href','http://glocalq.com/'+data.id+"/"+data.image_path);
+                $("#company-name").html(data.business_name)
+            }
+        });
+        $.ajax({
+            url:"http://glocalq.com/api/"+login.company_id+"/workers",
+            type:"GET",
+            success:function (data) {
+                console.log(data)
+            }
+        });
+    </script>
 </body>
 
 </html>
