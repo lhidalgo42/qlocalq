@@ -36,6 +36,9 @@
     },
     "cordova-plugin-vibration": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "nl.x-services.plugins.calendar": {
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     }
   },
   "dependent_plugins": {

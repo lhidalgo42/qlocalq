@@ -94,5 +94,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "nl.x-services.plugins.calendar": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/Telerik-Verified-Plugins/Calendar"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

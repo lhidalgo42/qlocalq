@@ -35,6 +35,9 @@
     <feature name="Vibration">
         <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
     </feature>
+    <feature name="Calendar">
+        <param name="android-package" value="nl.xservices.plugins.Calendar" />
+    </feature>
     <name>QlocalQ</name>
     <description>
         Orquestando el talento organizacional.
@@ -45,6 +48,9 @@
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
+    <allow-intent href="http://*/*/*" />
+    <allow-intent href="http://*/*/*/*" />
+    <allow-intent href="http://*/*/*/*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />

@@ -369,6 +369,14 @@ module.exports = [
       "navigator.notification",
       "navigator"
     ]
+  },
+  {
+    "id": "nl.x-services.plugins.calendar.Calendar",
+    "file": "plugins/nl.x-services.plugins.calendar/www/Calendar.js",
+    "pluginId": "nl.x-services.plugins.calendar",
+    "clobbers": [
+      "Calendar"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -384,7 +392,8 @@ module.exports.metadata =
   "cordova-plugin-globalization": "1.0.9",
   "cordova-plugin-inappbrowser": "1.7.2",
   "cordova-plugin-network-information": "1.3.4",
-  "cordova-plugin-vibration": "2.1.6"
+  "cordova-plugin-vibration": "2.1.6",
+  "nl.x-services.plugins.calendar": "4.5.5"
 };
 // BOTTOM OF METADATA
 });
