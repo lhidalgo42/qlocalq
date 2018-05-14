@@ -57,7 +57,7 @@
             }
         });
         $.ajax({
-            url:"http://app.glocalq.com/api/"+login.company_id+"/workers",
+            url:"http://app.glocalq.com/api/company/"+login.company_id+"/workers",
             type:"GET",
             success:function (data) {
                 var people = $("#people > ").find(".section-people");
