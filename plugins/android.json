@@ -8,42 +8,48 @@
   },
   "installed_plugins": {
     "cordova-plugin-battery-status": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     },
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "cordova-plugin-media-capture": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     },
     "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     },
     "cordova-plugin-globalization": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     },
     "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     },
     "cordova-plugin-vibration": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     },
-    "nl.x-services.plugins.calendar": {
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
+    },
+    "cordova-plugin-calendar": {
       "PACKAGE_NAME": "lhidalgo42.ikigai"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "lhidalgo42.ikigai"
     }
   }
 }

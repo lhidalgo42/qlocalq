@@ -95,12 +95,30 @@
     "is_top_level": true,
     "variables": {}
   },
-  "nl.x-services.plugins.calendar": {
+  "cordova-plugin-x-socialsharing": {
     "source": {
       "type": "registry",
-      "id": "https://github.com/Telerik-Verified-Plugins/Calendar"
+      "id": "cordova-plugin-x-socialsharing"
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "es6-promise-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "es6-promise-plugin@^4.1.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-calendar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-calendar@5.0.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "CALENDAR_USAGE_DESCRIPTION": "This app uses your calendar"
+    }
   }
 }
