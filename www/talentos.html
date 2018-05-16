@@ -35,7 +35,8 @@
         </div>
     </section>
     <section id="photo">
-        <div class="center-block" style="width:55px;height:55px;position:absolute;margin-left:40%;background-color:#000000;border-radius:27.5px;-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);-moz-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);"><img class="rounded-circle" src="assets/img/sil-female.png" style="width:100%;height:100%;"></div>
+        <div class="center-block" style="width:55px;height:55px;position:absolute;margin-left:40%;background-color:#000000;border-radius:27.5px;-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);-moz-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);">
+            <img class="rounded-circle" src="" style="width:100%;height:100%;" id="profile-photo"></div>
         <div style="width:100%;height:75%;margin-top:12%;border-radius:10px;border:1px solid rgb(126,126,126);-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);-moz-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);text-align:center;background-color:#ffffff;">
             <p style="font-family:Quicksand, sans-serif;color:rgb(44,44,44);padding-right:20px;padding-left:20px;padding-top:25px;" id="company-name"></p>
         </div>
@@ -47,12 +48,13 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
         var login = JSON.parse(window.localStorage.getItem("login"));
+        $("#profile-photo").attr('src','http://app.glocalq.com/'+login.image_path);
         $.ajax({
             url:"http://app.glocalq.com/api/company/"+login.company_id,
             type:"GET",
             success:function (data) {
                 console.log(data)
-                $("#bg-image").attr('href','http://glocalq.com/'+data.id+"/"+data.image_path);
+                $("#bg-image").attr('src','http://app.glocalq.com/'+data.image_path);
                 $("#company-name").html(data.business_name)
             }
         });
@@ -60,12 +62,14 @@
             url:"http://app.glocalq.com/api/company/"+login.company_id+"/workers",
             type:"GET",
             success:function (data) {
-                var people = $("#people > ").find(".section-people");
-                for(var i = 0;i<data.left;i++){
-                    people.append("            <div class=\"row links\" style=\"width:100%;height:76px;background-color:#ffffff;\">\n" +
-                        "                <div class=\"col-3 image\" style=\"padding-top:8px;padding-left:6px;\"><img class=\"rounded-circle\" src=\"assets/img/sil-female.png\" style=\"width:60px;height:60px;\"></div>\n" +
+                console.log(data);
+                let people = $("#people").find(".section-people");
+                for(var i = 0;i<data.length;i++){
+                    people.append("  " +
+                        "          <div class=\"row links\" style=\"width:100%;height:76px;background-color:#ffffff;\">\n" +
+                        "                <div class=\"col-3 image\" style=\"padding-top:8px;padding-left:6px;\"><img class=\"rounded-circle\" src='http://app.glocalq.com/"+data[i].image_path+"' style=\"width:60px;height:60px;\"></div>\n" +
                         "                <div class=\"info col-9\"><span class=\"title\" style=\"font-family:Quicksand, sans-serif;font-size:19px;font-weight:bold;font-style:normal;\">"+data[i].name+" "+data[i].lastname+"</span>\n" +
-                        "                    <p style=\"font-family:Quicksand, sans-serif;font-weight:normal;font-style:normal;line-height:15px;letter-spacing:0px;\">"+data[i].position+"</p>\n" +
+                        "                    <p style=\"font-family:Quicksand, sans-serif;font-weight:normal;font-style:normal;line-height:15px;letter-spacing:0px;\">"+data[i].position+" | "+data[i].area+"</p>\n" +
                         "                    <p style=\"font-family:Quicksand, sans-serif;font-size:8px;margin-top:-13px;line-height:9px;letter-spacing:0px;\">"+data[i].ikigai+"</p>\n" +
                         "                </div>\n" +
                         "            </div>")
