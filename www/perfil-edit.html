@@ -184,15 +184,16 @@
     $("#ikigai").val(login.ikigai);
     $("#person-image").attr('src', "http://app.glocalq.com/" + login.image_path);
 
-    $("#save").click(function () {
+    $("#save").click(function (e) {
+        e.preventDefault();
         $.ajax({
             type: "POST",
-            url: "http://app.glocalq.com/api/woker/upload/"+login.id,
+            url: "http://app.glocalq.com/api/worker/upload/"+login.id,
             data: new FormData($('#data')[0]),
             processData: false,
             contentType: false,
             success: function (dato) {
-                console.log(dato)
+                console.log(dato);
                 $.ajax({
                     url: "http://glocalq.com/api/login",
                     type: "POST",
@@ -205,6 +206,7 @@
                         window.location.href = 'perfil.html'
                     }
                 });
+
             }
         });
     })
