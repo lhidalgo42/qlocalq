@@ -11,27 +11,157 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        html {
+            font-family: Quicksand;
+        }
+
+        .company-bg {
+            width: 100%;
+            height: 200px;
+        }
+
+        .company-logo {
+            border: solid black 1px;
+            width: 60px;
+            height: 60px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            position: absolute;
+            left: 40%;
+            top: 25%;
+        }
+
+        .person-image {
+            border: solid lightgray 1px;
+            width: 110px;
+            height: 110px;
+            -webkit-border-radius: 55px;
+            -moz-border-radius: 55px;
+            border-radius: 55px;
+            position: absolute;
+            left: 34%;
+            top: 31%;
+            z-index: 300;
+        }
+        #person-image{
+            -webkit-border-radius: 55px;
+            -moz-border-radius: 55px;
+            border-radius: 55px;
+        }
+
+        .content-person {
+            padding-top: 80px;
+            min-height: 300px;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding-bottom: 50px;
+            margin-bottom: 50px;
+        }
+
+        .ikigai {
+            background-color: white;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    </style>
 </head>
 
 <body>
-    <section id="footer" class="fixed-bottom" style="background-color:#E6E6E6;">
-        <ul class="nav nav-tabs" style="color:rgb(123,123,123);">
-            <li class="nav-item"><a class="nav-link" href="talentos.html" style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span style="font-size:16px;padding-top:5px;"><i class="icon-compass" style="font-size:25px;color:#A084DC;"></i></span><span>Talentos</span></a></li>
-            <li
-                class="nav-item"><a class="nav-link" href="equipo.html" style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span style="font-size:16px;padding-top:5px;"><i class="fa fa-users" style="font-size:25px;color:#A084DC;"></i></span><span>Mi Equipo</span></a></li>
-                <li
-                    class="nav-item"><a class="nav-link" href="mensajes.html" style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span style="font-size:16px;padding-top:5px;"><i class="fa fa-comments" style="font-size:25px;color:#A084DC;"></i></span><span>Mensajes</span></a></li>
-                    <li
-                        class="nav-item"><a class="nav-link" href="calendario.html" style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span style="font-size:16px;padding-top:5px;"><i class="fa fa-calendar" style="font-size:25px;color:#A084DC;"></i></span><span>Calendario</span></a></li>
-                        <li
-                            class="nav-item"><a class="nav-link" href="perfil.html" style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span style="font-size:16px;padding-top:5px;"><i class="fa fa-user-o" style="font-size:25px;color:#A084DC;"></i></span><span>Mi Perfil</span></a></li>
-        </ul>
-    </section>
-    <section id="title" class="fixed-top">
-        <div style="height:40px;width:100%;text-align:center;background-color:#6132C5;"><span style="font-family:Quicksand, sans-serif;font-weight:bold;color:rgb(255,255,255);">Perfil</span></div>
-    </section>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<section id="footer" class="fixed-bottom" style="background-color:#E6E6E6;">
+    <ul class="nav nav-tabs" style="color:rgb(123,123,123);">
+        <li class="nav-item"><a class="nav-link" href="talentos.html"
+                                style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span
+                style="font-size:16px;padding-top:5px;"><i class="icon-compass"
+                                                           style="font-size:25px;color:#A084DC;"></i></span><span>Talentos</span></a>
+        </li>
+        <li
+                class="nav-item"><a class="nav-link" href="equipo.html"
+                                    style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span
+                style="font-size:16px;padding-top:5px;"><i class="fa fa-users"
+                                                           style="font-size:25px;color:#A084DC;"></i></span><span>Mi Equipo</span></a>
+        </li>
+        <li
+                class="nav-item"><a class="nav-link" href="mensajes.html"
+                                    style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span
+                style="font-size:16px;padding-top:5px;"><i class="fa fa-comments"
+                                                           style="font-size:25px;color:#A084DC;"></i></span><span>Mensajes</span></a>
+        </li>
+        <li
+                class="nav-item"><a class="nav-link" href="calendario.html"
+                                    style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span
+                style="font-size:16px;padding-top:5px;"><i class="fa fa-calendar"
+                                                           style="font-size:25px;color:#A084DC;"></i></span><span>Calendario</span></a>
+        </li>
+        <li
+                class="nav-item"><a class="nav-link" href="perfil.html"
+                                    style="padding-bottom:0px;padding-top:0px;padding-right:8px;padding-left:8px;"><span
+                style="font-size:16px;padding-top:5px;"><i class="fa fa-user-o"
+                                                           style="font-size:25px;color:#A084DC;"></i></span><span>Mi Perfil</span></a>
+        </li>
+    </ul>
+</section>
+<section style="padding-top: 50px">
+    <div class="company-bg">
+        <img src="" alt="" style="width: 100%;height: 100%" id="company-logo">
+    </div>
+    <div class="company-logo">
+        <img src="" alt="">
+    </div>
+    <div class="person-image">
+        <img src="" alt="" id="person-image" style="width: 100%;height: 100%">
+    </div>
+    <div class="content-person center-block" style="text-align: center">
+        <h3 id="name"></h3>
+        <h6 id="position"></h6>
+        <h6 id="email"></h6>
+        <div class="ikigai">
+            <p id="ikigai"></p>
+        </div>
+        <div class="ikigai">
+            <h5>Desafío del año </h5>
+            <p id="desafio">lalala</p>
+        </div>
+        <div class="ikigai">
+            <h5>Logros</h5>
+            <p>Todavía no tienes ningún logro</p>
+        </div>
+        <div class="ikigai">
+            <h5>Intereses</h5>
+            <div class="col-12">
+                <div class="col-6"></div>
+                <div class="col-6"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="title" class="fixed-top">
+    <div style="height:40px;width:100%;text-align:center;background-color:#6132C5;"><span
+            style="font-family:Quicksand, sans-serif;font-weight:bold;color:rgb(255,255,255);">Perfil</span></div>
+</section>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    let login = JSON.parse(window.localStorage.getItem('login'));
+    $.ajax({
+        url:"http://app.glocalq.com/api/company/"+login.company_id,
+        type:"GET",
+        success:function (data) {
+           window.localStorage.setItem("company", JSON.stringify(data));
+            let company = JSON.parse(window.localStorage.getItem('company'));
+            console.log(company);
+            $("#company-logo").attr('src',"http://app.glocalq.com/"+company.image_path)
 
+        }
+    });
+
+    console.log(login);
+    $("#name").html(login.name + " " + login.lastname);
+    $("#position").html(login.position + " | " + login.area)
+    $("#email").html(login.email);
+    $("#ikigai").html(login.ikigai)
+    $("#person-image").attr('src',"http://app.glocalq.com/"+login.image_path)
+</script>
 </html>
